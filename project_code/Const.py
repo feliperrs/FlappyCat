@@ -1,4 +1,11 @@
+# C
+C_YELLOW = (255, 255, 128)
+C_WHITE = (255, 255, 255)
+
+# M
+MENU_OPTION = ('START',
+               'EXIT')
+
 # W
 WIN_HEIGHT = 324
 WIN_WIDTH = 576
-
