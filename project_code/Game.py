@@ -1,5 +1,6 @@
 import pygame
 
+from project_code.Menu import Menu
 from project_code.Const import WIN_HEIGHT, WIN_WIDTH
 
 
@@ -12,9 +13,6 @@ class Game:
 
     def run(self):
         while True:
-            # checks for all events
-            for event in pygame.event.get():
-                # checks if the user clicked the X, then closes the window
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
+            menu = Menu(self.window)
+            menu.run()
+
