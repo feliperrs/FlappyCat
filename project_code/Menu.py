@@ -25,8 +25,9 @@ class Menu:
             self.window.blit(source=self.surf, dest=self.rect)
 
             # writes Flappy Cat
-            self.menu_text(50, "Flappy", C_WHITE, ((WIN_WIDTH/2), 70))
-            self.menu_text(50, "Cat", C_WHITE, ((WIN_WIDTH/2), 120))
+            self.menu_text(50, "FLAPPY", C_WHITE, ((WIN_WIDTH/2), 70))
+            self.menu_text(50, "CAT", C_WHITE, ((WIN_WIDTH/2), 120))
+            self.menu_text(13, "Felipe Ribeiro Rodrigues dos Santos - RU: 4695260", C_WHITE, (200, 10))
 
             # menu selection
             for i in range(len(MENU_OPTION)):
@@ -44,6 +45,21 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+                # checks if a key was pressed
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_DOWN:  # DOWN KEY
+                        if menu_option < len(MENU_OPTION) - 1:
+                            menu_option += 1
+                        else:
+                            menu_option = 0
+                    if event.key == pygame.K_UP:  # UP KEY
+                        if menu_option > 0:
+                            menu_option -= 1
+                        else:
+                            menu_option = len(MENU_OPTION) - 1
+                    # returns the player choice
+                    if event.key == pygame.K_RETURN:  # ENTER
+                        return MENU_OPTION[menu_option]
 
             pygame.display.flip()
 
