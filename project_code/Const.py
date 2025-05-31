@@ -2,6 +2,12 @@
 C_YELLOW = (255, 255, 128)
 C_WHITE = (255, 255, 255)
 
+# G
+GRAVITY = 0.25
+
+# J
+JUMP_STRENGTH = -4.5
+
 # M
 MENU_OPTION = ('START',
                'EXIT')

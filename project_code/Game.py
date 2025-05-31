@@ -16,7 +16,7 @@ class Game:
         while True:
             menu = Menu(self.window)
             menu_return = menu.run()    # get the menu choice
-            level = Level()
+            level = Level(self.window)
 
             # starts the game
             if menu_return == MENU_OPTION[0]:
