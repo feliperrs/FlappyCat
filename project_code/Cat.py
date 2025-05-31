@@ -13,7 +13,7 @@ class Cat:
         self.rect = self.surf.get_rect(left=self.x, top=self.y)
         self.speed = 0
 
-    def atualizar(self):
+    def update(self):
         self.speed += GRAVITY
         self.y += self.speed
         self.rect.centery = self.y
