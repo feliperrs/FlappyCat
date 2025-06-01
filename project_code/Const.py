@@ -1,6 +1,7 @@
 # C
 C_YELLOW = (255, 255, 128)
 C_WHITE = (255, 255, 255)
+C_GREEN = (0, 200, 0)
 
 # G
 GRAVITY = 0.25
@@ -11,6 +12,10 @@ JUMP_STRENGTH = -4.5
 # M
 MENU_OPTION = ('START',
                'EXIT')
+
+# P
+PIPE_DIST = 100
+PIPE_SPEED = 2
 
 # W
 WIN_HEIGHT = 324

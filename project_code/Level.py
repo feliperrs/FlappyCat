@@ -1,6 +1,7 @@
 import pygame
 
 from project_code.Cat import Cat
+from project_code.Pipe import Pipe
 from project_code.Const import WIN_HEIGHT, WIN_WIDTH
 
 
@@ -16,6 +17,7 @@ class Level:
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
         cat = Cat(self.window)
+        pipes_list = []
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             clock.tick(60)
@@ -29,5 +31,17 @@ class Level:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         cat.pular()
+                        
+            # Adiciona canos
+            if len(pipes_list) == 0 or pipes_list[-1].x < WIN_WIDTH - 200:
+                pipes_list.append(Pipe(WIN_WIDTH))
+
+            # Atualiza e desenha canos
+            for cano in pipes_list[:]:
+                cano.atualizar()
+                cano.desenhar()
+                if cano.x + cano.largura < 0:
+                    pipes_list.remove(cano)
+                    # pontos += 1
 
             pygame.display.flip()

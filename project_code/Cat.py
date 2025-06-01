@@ -8,8 +8,7 @@ class Cat:
         self.window = window
         self.x = 50
         self.y = WIN_HEIGHT // 2
-        self.surf = pygame.image.load(
-            './asset/cat.png').convert_alpha()
+        self.surf = pygame.image.load('./asset/cat.png').convert_alpha()
         self.rect = self.surf.get_rect(left=self.x, top=self.y)
         self.speed = 0
 
