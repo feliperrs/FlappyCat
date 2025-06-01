@@ -1,7 +1,8 @@
 # C
-C_YELLOW = (255, 255, 128)
+C_YELLOW = (255, 255, 0)
 C_WHITE = (255, 255, 255)
 C_GREEN = (0, 200, 0)
+C_RED = (255, 0, 0)
 
 # G
 GRAVITY = 0.25
