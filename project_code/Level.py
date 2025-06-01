@@ -2,7 +2,7 @@ import pygame
 
 from project_code.Cat import Cat
 from project_code.Pipe import Pipe
-from project_code.Const import WIN_HEIGHT, WIN_WIDTH
+from project_code.Const import PIPE_WIDTH, WIN_HEIGHT, WIN_WIDTH
 
 
 class Level:
@@ -32,15 +32,15 @@ class Level:
                     if event.key == pygame.K_SPACE:
                         cat.pular()
                         
-            # Adiciona canos
+            # add pipes to the pipe list
             if len(pipes_list) == 0 or pipes_list[-1].x < WIN_WIDTH - 200:
                 pipes_list.append(Pipe(WIN_WIDTH))
 
-            # Atualiza e desenha canos
+            # update and draws pipes
             for cano in pipes_list[:]:
-                cano.atualizar()
-                cano.desenhar()
-                if cano.x + cano.largura < 0:
+                cano.update()
+                cano.draw()
+                if cano.x + PIPE_WIDTH < 0:
                     pipes_list.remove(cano)
                     # pontos += 1
 
