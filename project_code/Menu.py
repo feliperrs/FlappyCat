@@ -64,7 +64,7 @@ class Menu:
             pygame.display.flip()
 
     # function to write a text in the screen
-    def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
+    def menu_text(self, text_size, text, text_color, text_center_pos):
         text_font: Font = pygame.font.SysFont(
             name="Lucida Sans Typewriter", size=text_size)
         text_surf: pygame.Surface = text_font.render(
